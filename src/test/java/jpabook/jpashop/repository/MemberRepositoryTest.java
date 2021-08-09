@@ -18,7 +18,7 @@ public class MemberRepositoryTest {
     @Transactional
     public void testMember() throws Exception{
         //given
-
+        memberRepository.findAll();
         //when
 
         //then
