@@ -66,4 +66,11 @@ public class OrderQueryRepository {
 
         return result;
     }
+
+    public List<OrderQueryDto> findAllByDto_flat() {
+        return em.createQuery(
+                "select new " +
+                        
+        )
+    }
 }

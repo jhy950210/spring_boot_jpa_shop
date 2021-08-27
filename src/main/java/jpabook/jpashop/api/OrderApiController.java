@@ -78,6 +78,12 @@ public class OrderApiController {
         return orderQueryRepository.findAllByDto_optimization();
     }
 
+    @GetMapping("/api/v6/orders")
+    public List<OrderQueryDto> ordersV6() {
+
+        return orderQueryRepository.findAllByDto_flat();
+    }
+
     @Data
     static class OrderDto {
         private Long orderId;
