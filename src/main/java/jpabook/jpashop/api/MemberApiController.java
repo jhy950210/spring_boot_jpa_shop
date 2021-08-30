@@ -61,23 +61,23 @@ public class MemberApiController {
     }
 
     @PutMapping("/api/v2/members/{id}")
-    public UpdataMemberResponse updateMemberV2(
+    public UpdateMemberResponse updateMemberV2(
             @PathVariable("id") Long id,
-            @RequestBody @Valid UpdataMemberResquest resquest){
+            @RequestBody @Valid UpdateMemberResquest resquest){
         memberService.update(id, resquest.getName());
         Member findMember = memberService.findOne(id);
 
-        return  new UpdataMemberResponse(findMember.getId(), findMember.getName());
+        return new UpdateMemberResponse(findMember.getId(), findMember.getName());
     }
 
     @Data
-    static class UpdataMemberResquest{
+    static class UpdateMemberResquest{
         private String name;
     }
 
     @Data
     @AllArgsConstructor
-    static class UpdataMemberResponse{
+    static class UpdateMemberResponse{
         private Long id;
         private String name;
     }
